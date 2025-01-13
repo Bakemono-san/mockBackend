@@ -37,7 +37,7 @@ app.post('/login', async (req, res) => {
     const token = jwt.sign({ id: user.id, role: user.role }, SECRET_KEY);
     console.log(token);
     
-    res.json({ token_key: token });
+    res.json({ token_key: token,user: user });
   } catch (error) {
     res.status(500).json({ message: 'Error validating user', error: error.message });
   }
