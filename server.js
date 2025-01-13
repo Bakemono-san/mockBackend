@@ -18,7 +18,7 @@ app.post('/login', async (req, res) => {
 
   try {
     // Fetch users from Mockend
-    const response = await axios.get('https://mockend.com/api/Bakemono-san/mockservertest/auth');
+    const response = await axios.get('https://677c031020824100c07b9179.mockapi.io/api/digitalSocle/users');
     const users = response.data;
 
     // Find the user
@@ -71,7 +71,7 @@ app.get('/:endpoint', authenticate, async (req, res) => {
   
 
   try {
-    const response = await axios.get(`https://mockend.com/api/Bakemono-san/mockservertest/${endpoint}`);
+    const response = await axios.get(`https://677c031020824100c07b9179.mockapi.io/api/digitalSocle/${endpoint}`);
     res.json(response.data);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching data from Mockend', error: error.message });
