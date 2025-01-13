@@ -34,7 +34,7 @@ app.post('/login', async (req, res) => {
     }
 
     // Generate Access Token
-    const token = jwt.sign({ id: user.id, role: user.role }, SECRET_KEY);
+    const token = jwt.sign({ user: user }, SECRET_KEY);
     console.log(token);
     
     res.json({ token_key: token,user: user });
